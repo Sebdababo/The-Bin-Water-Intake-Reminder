@@ -1,0 +1,57 @@
+[wokwi]
+version = 1
+
+# Define the microcontroller
+chip = "ESP32 DevKit V1"
+
+# Define the 1602 LCD (without I2C)
+[[components]]
+type = "LCD1602"
+id = "lcd1"
+pins = { rs=25, en=26, d4=12, d5=13, d6=14, d7=27, vss="GND", vdd="3.3V", vo="GND", rw="GND", backlight="3.3V" }
+
+# Define the SSD1306 OLED display
+[[components]]
+type = "SSD1306"
+id = "oled1"
+address = 0x3C
+width = 128
+height = 64
+i2c_pins = { sda=21, scl=22 }
+
+# Define the DHT22 (Digital Humidity and Temperature Sensor)
+[[components]]
+type = "DHT22"
+id = "dht1"
+pin = 4
+
+# Define the DS18B20 (Digital Temperature Sensor)
+[[components]]
+type = "DS18B20"
+id = "ds1"
+pin = 5
+pullup = "3.3V"
+
+# Define the Potentiometer
+[[components]]
+type = "Potentiometer"
+id = "pot1"
+pin = 34
+
+# Define the Piezo Buzzer
+[[components]]
+type = "Buzzer"
+id = "buzzer1"
+pin = 18
+
+# Define the Infrared Receiver
+[[components]]
+type = "IRReceiver"
+id = "irrecv1"
+pin = 19
+
+# Define the RTC Module
+[[components]]
+type = "RTC"
+id = "rtc1"
+i2c_pins = { sda=21, scl=22 }

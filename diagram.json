@@ -1,0 +1,109 @@
+{
+  "version": 1,
+  "author": "The Bin - Hack Club",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": 342.6, "left": -131.6, "attrs": {} },
+    {
+      "type": "board-ds18b20",
+      "id": "board-ds18b20-0",
+      "top": 114.07,
+      "left": 32.88,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "wokwi-lcd1602-0",
+      "top": 41.83,
+      "left": -809.6,
+      "attrs": {}
+    },
+    { "type": "wokwi-dht22", "id": "wokwi-dht22-0", "top": 57.9, "left": -303, "attrs": {} },
+    { "type": "wokwi-buzzer", "id": "wokwi-buzzer-0", "top": 79.2, "left": -123, "attrs": {} },
+    {
+      "type": "board-ssd1306",
+      "id": "board-ssd1306-0",
+      "top": 291.14,
+      "left": -758.17,
+      "attrs": {}
+    },
+    { "type": "wokwi-ds1307", "id": "wokwi-ds1307-0", "top": 81, "left": 345.7, "attrs": {} },
+    {
+      "type": "wokwi-ir-receiver",
+      "id": "wokwi-ir-receiver-0",
+      "top": 75.45,
+      "left": 171.02,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "wokwi-slide-potentiometer-0",
+      "top": 456.2,
+      "left": -769,
+      "attrs": {}
+    },
+    { "type": "wokwi-ir-remote", "id": "remote1", "top": 86.4, "left": 816, "attrs": {} },
+    { "type": "board-esp32-devkit-c-v4", "id": "esp1", "top": 336, "left": 292.84, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 32.75,
+      "left": 115.2,
+      "attrs": { "value": "4700" }
+    }
+  ],
+  "connections": [
+    [ "wokwi-slide-potentiometer-0:GND", "bb1:tn.1", "black", [ "v-163.2", "h464.4" ] ],
+    [ "board-ssd1306-0:GND", "bb1:tn.2", "black", [ "v-19.2", "h134.4", "v48", "h499.2" ] ],
+    [ "wokwi-lcd1602-0:VSS", "bb1:tn.3", "black", [ "v96", "h201.6", "v48", "h499.2" ] ],
+    [ "wokwi-dht22-0:GND", "bb1:tn.4", "black", [ "v134.4", "h182.4" ] ],
+    [ "wokwi-buzzer-0:1", "bb1:tn.5", "black", [ "v134.4", "h38.4" ] ],
+    [ "board-ds18b20-0:GND", "bb1:tn.6", "black", [ "v134.4", "h-86.4" ] ],
+    [ "wokwi-ir-receiver-0:GND", "bb1:tn.7", "black", [ "v144", "h-211.2" ] ],
+    [ "wokwi-ds1307-0:GND", "bb1:tn.8", "black", [ "h-67.2", "v220.8", "h-307.2" ] ],
+    [ "wokwi-lcd1602-0:RS", "esp1:25", "gray", [ "v76.8", "h969.9", "v192" ] ],
+    [ "esp1:26", "wokwi-lcd1602-0:E", "white", [ "h-67.05", "v-211.2", "h-960" ] ],
+    [ "esp1:12", "wokwi-lcd1602-0:D4", "gold", [ "v0", "h-57.45", "v-249.6", "h-921.6" ] ],
+    [ "wokwi-lcd1602-0:D5", "esp1:13", "gold", [ "v48", "h921.7", "v278.4" ] ],
+    [ "esp1:14", "wokwi-lcd1602-0:D6", "gold", [ "h-38.25", "v-259.2", "h-921.6" ] ],
+    [ "esp1:27", "wokwi-lcd1602-0:D7", "gold", [ "h-28.65", "v-259.2", "h-921.6" ] ],
+    [ "bb1:bp.1", "wokwi-lcd1602-0:VDD", "red", [ "v37.5", "h-363.2", "v-307.2", "h-307.3" ] ],
+    [ "wokwi-lcd1602-0:A", "bb1:bp.2", "red", [ "v19.2", "h191.9", "v384", "h363.2" ] ],
+    [ "esp1:GND.1", "bb1:tn.25", "black", [ "h-95.85", "v-124.8" ] ],
+    [ "bb1:tn.9", "wokwi-lcd1602-0:K", "black", [ "v-76.9", "h-612.8" ] ],
+    [ "esp1:21", "board-ssd1306-0:SDA", "white", [ "h38.4", "v-134.4", "h-1123.27" ] ],
+    [ "board-ssd1306-0:VCC", "bb1:bp.3", "red", [ "v-19.2", "h268.95", "v307.2", "h364.8" ] ],
+    [ "esp1:5V", "bb1:bp.25", "red", [ "h-67.05", "v-9.6" ] ],
+    [
+      "esp1:34",
+      "wokwi-slide-potentiometer-0:SIG",
+      "gray",
+      [ "h-9.45", "v259.2", "h-1094.4", "v-144" ]
+    ],
+    [
+      "wokwi-slide-potentiometer-0:VCC",
+      "bb1:bp.4",
+      "red",
+      [ "h-38.4", "v-28.8", "h374.4", "v124.8", "h364.8" ]
+    ],
+    [ "wokwi-dht22-0:VCC", "bb1:bp.5", "red", [ "v172.8", "h-134.4", "v259.2", "h364.8" ] ],
+    [ "esp1:4", "wokwi-dht22-0:SDA", "gray", [ "h48", "v-288", "h-720" ] ],
+    [ "esp1:18", "wokwi-buzzer-0:2", "red", [ "h57.6", "v-259.2", "h-537.2" ] ],
+    [ "bb1:tp.15", "board-ds18b20-0:VCC", "red", [ "v0" ] ],
+    [ "esp1:3V3", "bb1:tp.25", "red", [ "h-9.45", "v-19.2" ] ],
+    [ "board-ds18b20-0:DQ", "r1:1", "blue", [ "v9.6", "h48", "v-134.4", "h19.2" ] ],
+    [ "r1:2", "esp1:5", "blue", [ "v0", "h286.8", "v422.4" ] ],
+    [ "wokwi-ir-receiver-0:VCC", "bb1:tp.19", "red", [ "v9.6", "h-96" ] ],
+    [ "esp1:19", "wokwi-ir-receiver-0:DAT", "gray", [ "h76.8", "v-259.2", "h-259.2" ] ],
+    [
+      "wokwi-ds1307-0:5V",
+      "bb1:bp.6",
+      "red",
+      [ "h-67.2", "v66.8", "h-528", "v182.4", "h-172.8", "v259.2", "h364.8" ]
+    ],
+    [ "esp1:21", "wokwi-ds1307-0:SDA", "white", [ "h86.4", "v-201.6", "h-182.4", "v-96" ] ],
+    [ "wokwi-ds1307-0:SCL", "esp1:22", "gray", [ "h-48", "v95.8", "h182.4", "v211.2" ] ],
+    [ "esp1:22", "board-ssd1306-0:SCL", "gray", [ "h28.8", "v-96", "h-1113.6", "v0", "h-9.9" ] ]
+  ],
+  "dependencies": {}
+}
