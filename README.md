@@ -115,3 +115,8 @@ Ensure you have the following libraries installed in your Arduino IDE:
 ## Simulation
 
 You can also test this project using the [Wokwi simulation platform](https://wokwi.com/projects/405753331814653953). The simulation provides a virtual environment to experiment with the project without needing the physical hardware.
+
+## Project Setup
+
+<img width="1973" alt="image" src="https://github.com/user-attachments/assets/900aa304-fda0-4429-8035-08a70b1869a4">
+
